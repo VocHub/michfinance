@@ -1,0 +1,69 @@
+# Site
+name: 'CardInfo'
+url: 'https://cardinfo.in'
+description: 'Best site in India for real and unbiased credit card reviews. Save in tunes of lakhs each year using information, offers, tips & tricks shared on CardInfo.'
+logo: 'assets/images/cardinfo-logo.png'
+favicon: 'assets/images/favicon.ico'
+baseurl: ''
+disqus: 'cardinfo'
+disqus_public_key: 'QkDzEBxyYTVmwLo3RGPSQuL2rbZoKqLi1R96pO9H8NJDGtRsWLZrVtA9jCMQR4dj'
+email: 'hello@cardinfo.in'
+mailchimplist: 'https://cardinfo.us20.list-manage.com/subscribe/post?u=ff4082dcfa8fb2e1fd3cd3901&amp;id=9eec8b2c19'
+google_analytics: 'G-M39R8XNS1X'
+google_adsense: ''
+
+include: ['_pages']
+permalink: /:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+authors:
+  Pranav:
+    name: Pranav
+    site: https://pranavprakash.net
+    avatar: assets/images/pranav.jpg
+    bio: 'Hi, I am Pranav! I love to acquire, review and earn reward points/cashback from Credit Cards. Guiding people about benefits and optimal utilization of credit cards for years.'
+    email: hello@cardinfo.in
+    twitter: https://twitter.com/pranavpr
+
+# Defaults
+defaults:
+  # all posts
+  - scope:
+      path: '_posts'
+    values:
+      layout: post
+      author: Pranav
+      avatar: /assets/images/pranav.jpg
+
+  # all pages
+  - scope:
+      path: '_pages'
+    values:
+      layout: page
+
+# Syntax
+markdown: kramdown
+highlighter: rouge
+
+# Paginate
+paginate: 10
+
+# Exclude metadata and development time dependencies (like Grunt plugins)
+exclude:
+  [
+    README.markdown,
+    package.json,
+    grunt.js,
+    Gruntfile.js,
+    Gruntfile.coffee,
+    node_modules,
+  ]
+
+feed:
+  excerpt_only: true

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="referrer" content="no-referrer-when-downgrade"/>
+
+    <meta name="twitter:card" content="summary_large_image" />
+    {% seo %}
+    <meta name="verify-admitad" content="3e3604206a" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/{{site.favicon}}">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+
+    <!-- Google Fonts-->
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+    <style>{% include critical.css %}</style>
+    <!-- Bootstrap Modified -->
+    <link rel="preload" href="{{site.baseurl}}/assets/css/main.css" as="style">
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
+    <!-- Clapper CSS -->
+    <link rel="preload" href="{{site.baseurl}}/assets/css/applause-button.css" as="style">
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/applause-button.css">
+    <!-- Theme Stylesheet -->
+    <link rel="preload" href="{{site.baseurl}}/assets/css/theme.css?v=3" as="style">
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/theme.css?v=3">
+    <script defer src="{{site.baseurl}}/assets/js/fingerprint2.js"></script>
+    <script defer src="{{site.baseurl}}/assets/js/applause-button.js"></script>
+
+    {% include tracking-header.html %}
+
+
+</head>
+
+<body class="{% if page.url == "/" %} homefirstpage {% endif %}">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{{ site.baseurl }}/">
+            <picture>
+                <source data-srcset="{{site.baseurl}}/assets/images/cardinfo-logo.svg" type="image/svg+xml">
+                <img class="lazy pb-1" data-src="{{site.baseurl}}/assets/images/cardinfo-logo.png" alt="CardInfo">
+            </picture>
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbarColor02" style="">
+            <ul class="navbar-nav mr-auto d-flex align-items-center">
+               {% include menu-header.html %}
+            </ul>
+            <ul class="navbar-nav ml-auto d-flex align-items-center">
+                {% include search-lunr.html %}
+            </ul>
+        </div>
+    </div>
+    </nav>
+
+    <!-- Search Results -->
+    <div id="lunrsearchresults">
+        <ul class="mb-0"></ul>
+    </div>
+
+    <!-- Content -->
+    <main role="main" class="site-content">
+        {{ content }}
+    </main>
+
+
+    <!-- Scripts: theme, lunr -->
+    <script>	
+        // Set the options to make LazyLoad self-initialize	
+        window.lazyLoadOptions = {	
+            elements_selector: ".lazy"
+        };
+    </script>
+
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/12.0.0/lazyload.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.27/bootstrap-native-v4.min.js"></script>
+    <script defer src="{{site.baseurl}}/assets/js/theme.js?v=2"></script>
+    <script defer src="{{site.baseurl}}/assets/js/mailchimp.js?v=2"></script>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top p-3 text-muted small">
+        <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div>
+                <span class="navbar-brand mr-2 mb-0">
+                    <picture>
+                        <source data-srcset="{{site.baseurl}}/assets/images/cardinfo-logo.svg" type="image/svg+xml">
+                        <img class="lazy pb-1" data-src="{{site.baseurl}}/assets/images/cardinfo-logo.png" alt="CardInfo">
+                    </picture>
+                </span>
+                <span>© <script>document.write(new Date().getFullYear())</script>. All rights reserved.</span>
+            </div>
+            <div>
+                <a class="text-dark" href="/privacy-policy"> Privacy Policy</a>
+            </div>
+        </div>
+        </div>
+    </footer>
+    {% include quicklink.html %}
+    {% include tracking-footer.html %}
+    </body>
+
+</html>

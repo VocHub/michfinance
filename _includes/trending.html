@@ -1,0 +1,33 @@
+<script>
+  var trendingHTML = '<ol class="list-featured">';
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://api.cardinfo.in/trending', true);
+
+  request.onload = function () {
+    if (this.status >= 200 && this.status < 400) {
+      var data = JSON.parse(this.response);
+      var posts = data.trendingArticles;
+      for (post of posts) {
+        trendingHTML =
+          trendingHTML +
+          '<li class="mb-4"><span><h6 class="font-weight-bold"> <a href="//' +
+          post.url +
+          '" class="text-dark">' +
+          post.title +
+          '</a></h6></span></li>';
+      }
+      trendingHTML = trendingHTML + '</ol>';
+      document.getElementById('trending').innerHTML = trendingHTML;
+    } else {
+      console.log('Server error in fetching data.');
+    }
+  };
+
+  request.onerror = function () {
+    console.log('Connection error in fetching data.');
+  };
+
+  request.send();
+</script>
+<h4 class="font-weight-bold spanborder"><span>Trending</span></h4>
+<div id="trending"></div>
